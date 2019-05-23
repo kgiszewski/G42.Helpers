@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Assembly\AssemblyHelper.cs" />
     <Compile Include="Assembly\IAssemblyHelper.cs" />
+    <Compile Include="Exceptions\ErrorHelper.cs" />
     <Compile Include="Exceptions\ForbiddenException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="FlowControl\AsyncHelper.cs" />

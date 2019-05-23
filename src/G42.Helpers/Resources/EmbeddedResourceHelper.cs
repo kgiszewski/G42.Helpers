@@ -5,7 +5,7 @@ namespace G42.Helpers.Resources
 {
     public class EmbeddedResourceHelper : IEmbeddedResourceHelper
     {
-        public string GetResource(string resourceLocation, Type type = null)
+        public string GetResource(string resourceLocation, Type type)
         {
             using (var stream = GetResourceStream(resourceLocation, type))
             {
@@ -21,7 +21,7 @@ namespace G42.Helpers.Resources
             }
         }
 
-        public Stream GetResourceStream(string resourceLocation, Type type = null)
+        public Stream GetResourceStream(string resourceLocation, Type type)
         {
             var assembly = type == null ? System.Reflection.Assembly.GetExecutingAssembly() : System.Reflection.Assembly.GetAssembly(type);
 

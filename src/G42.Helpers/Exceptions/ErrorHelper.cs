@@ -4,18 +4,20 @@ namespace G42.Helpers.Exceptions
 {
     public static class ErrorHelper
     {
-        public static string GetInnerExceptions(System.Exception exception)
+        public static (string, string) GetInnerExceptions(System.Exception exception)
         {
-            var sb = new StringBuilder();
+            var messageSb = new StringBuilder();
+            var traceSb = new StringBuilder();
 
             if (exception != null)
             {
-                sb.AppendLine(exception.Message);
+                messageSb.AppendLine(exception.Message);
+                traceSb.AppendLine(exception.StackTrace);
 
                 GetInnerExceptions(exception.InnerException);
             }
 
-            return sb.ToString();
+            return (messageSb.ToString(), traceSb.ToString());
         }
     }
 }
